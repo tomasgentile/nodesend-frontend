@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import React, { createContext, useReducer } from "react";
 import AuthReducer from "./AuthReducer";
 import { USER_AUTH, SIGNUP_SUCCESS, SIGNUP_ERROR, HIDE_ALERT, LOGIN_SUCCESS, LOGIN_ERROR, LOGOUT } from "../types";
 import axiosClient from "../config/axios";

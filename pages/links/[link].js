@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import Layout from "../../components/Layout";
 import axiosClient from "../../config/axios";
 import AppContext from "../../context/AppContext";
@@ -25,7 +25,7 @@ export async function getSererSidePaths() {
   }
 }
 
-const linkPage = ({ link }) => {
+const LinkPage = ({ link }) => {
   const { showAlert, msg_file } = useContext(AppContext);
   const [password, setPassword] = useState('');
   const [withPassword, setWithPassword] = useState(link.password);
@@ -94,4 +94,4 @@ const linkPage = ({ link }) => {
   )
 }
 
-export default linkPage;
+export default LinkPage;

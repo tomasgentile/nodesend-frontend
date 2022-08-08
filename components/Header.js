@@ -1,6 +1,7 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
 import AuthContext from '../context/AuthContext';
 
@@ -17,10 +18,13 @@ const Header = () => {
 
   return (
     <header className='py-8 flex flex-col md:flex-row items-center justify-between'>
-      <img
+      <Image
         onClick={() => redirect()}
-        className='w-64 mb-8 md:mb-0 cursor-pointer'
+        className='w-64 mb-8 cursor-pointer'
         src='/logo.svg'
+        alt='Imagen Logo'
+        width='300'
+        height='60'
       />
       <div>
         {user ? (
@@ -36,11 +40,11 @@ const Header = () => {
           </div>
         ) : (
           <>
-            <Link href="/login">
+            <Link href="/Login">
               <a className='bg-red-500 px-5 py-3 rounded-lg text-white font-bold uppercase mr-2'>
                 Iniciar Sesión</a>
             </Link>
-            <Link href="/singup">
+            <Link href="/Singup">
               <a className='bg-black px-5 py-3 rounded-lg text-white font-bold uppercase'>
                 Crear Cuenta</a>
             </Link>

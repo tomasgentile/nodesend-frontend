@@ -1,11 +1,11 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import Layout from "../components/Layout";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import AuthContext from "../context/AuthContext";
 import Alert from '../components/Alert';
 
-const singup = () => {
+const Singup = () => {
   const { singupUser, message } = useContext(AuthContext);
 
   // Formik Validation & Yup
@@ -114,4 +114,4 @@ const singup = () => {
   )
 }
 
-export default singup;
+export default Singup;

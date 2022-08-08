@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import Layout from "../components/Layout";
@@ -6,7 +6,7 @@ import AuthContext from "../context/AuthContext";
 import Alert from '../components/Alert';
 import { useRouter } from 'next/router';
 
-const login = () => {
+const Login = () => {
   const { loginUser, message, auth } = useContext(AuthContext);
 
   const router = useRouter();
@@ -100,4 +100,4 @@ const login = () => {
   )
 }
 
-export default login;
+export default Login;

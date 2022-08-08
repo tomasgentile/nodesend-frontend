@@ -1,4 +1,4 @@
-import { useCallback, useContext } from 'react';
+import React, { useCallback, useContext } from 'react';
 import { useDropzone } from 'react-dropzone';
 import AppContext from '../context/AppContext';
 import AuthContext from '../context/AuthContext';
@@ -18,7 +18,7 @@ const Dropzone = () => {
         formData.append('file', acceptedFiles[0]);
         const filename = acceptedFiles[0].path;
         uploadFiles(formData, filename);
-    }, []);
+    }, [uploadFiles]);
 
     // Extract dropzone content
     const { getRootProps, getInputProps, isDragActive, acceptedFiles } = useDropzone({ onDropAccepted, onDropRejected, maxSize: 1000000 });

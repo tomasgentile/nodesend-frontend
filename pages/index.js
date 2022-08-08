@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Link from 'next/link';
 import Dropzone from '../components/Dropzone';
 import AuthContext from '../context/AuthContext';
@@ -7,7 +7,7 @@ import Layout from '../components/Layout';
 import Alert from '../components/Alert';
 
 export default function Home() {
-  const { userAuth, auth } = useContext(AuthContext);
+  const { userAuth } = useContext(AuthContext);
   const { msg_file, url } = useContext(AppContext);
 
   // Get user from localstorage
@@ -16,7 +16,7 @@ export default function Home() {
     if(token) {
       userAuth();
     }
-  }, []);
+  }, [userAuth]);
 
   return (
     <Layout>
@@ -46,7 +46,7 @@ export default function Home() {
                 <p className='text-lg leading-loose mb-4'>
                   <span className='text-red-500 font-bold'> ReactNodeSend </span>
                   te permite compartir archivos con cifrado de extremo a extremo</p>
-                <Link href='/signup'>
+                <Link href='/Signup'>
                   <a className='text-red-500 font-bold text-lg hover:text-red-700'>Crea una cuenta para mayores beneficios</a>
                 </Link>
               </div>
